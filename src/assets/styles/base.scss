@@ -1,0 +1,171 @@
+
+HTML, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td {
+  border:none;
+  font-family:"微软雅黑","黑体","宋体";
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+a{
+  text-decoration:none;
+}
+a:link{
+  color:#fff;
+}
+a:visited{
+  color:#fff;
+}
+a:hover{
+  color:#fff;
+}
+a:active{
+  color:#fff;
+}
+input::-ms-clear{
+  display:none;
+}
+input::-ms-reveal{
+  display:none;
+}
+input{
+  -webkit-appearance: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+input::-webkit-input-placeholder{
+  color: #ccc;
+}
+input::-ms-input-placeholder{
+  color: #ccc;
+}
+input::-moz-placeholder{
+  color: #ccc;
+}
+input[type=submit],input[type=button]{
+  cursor: pointer;
+}
+button[disabled], input[disabled] {
+  cursor: default;
+}
+img{
+  border:none;
+}
+ul,ol,li{
+  list-style-type:none;
+}
+/*公共方法*/
+.cleafix:after{
+  content:'.';
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 0;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.pointer{
+  cursor: pointer;
+}
+/*背景及色值表*/
+.bg000{
+  background: #000;
+}
+.color000{
+  color: #000;
+}
+// 文字超出显示 ...
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.scrollbar_style {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 53%, 0.6);
+  }
+  &:hover::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 53%, 0.1);
+  }
+}
+// 表格水平超出后 默认展示滚动条
+.xScroll_table {
+  .el-table {
+    max-height: 100%;
+  }
+  .el-table__body-wrapper {
+    height: calc(100% - 35px);
+    overflow: auto;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar {
+    /* 隐藏默认的滚动条 */
+    -webkit-appearance: none;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: transparent;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+  }
+  .el-table__body-wrapper:hover::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 53%, 0.6);
+  }
+  .el-table__body-wrapper:hover::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 53%, 0.1);
+  }
+}
+// 统一样式 > 右侧模块的超出滚动
+.right_content_overflow {
+  // height: calc(100vh - 100px);
+  height: calc(100vh - 114px);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  > .el-card:nth-child(2) {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    .el-card__body {
+      flex: 1;
+    }
+  }
+}
+// table文字全部纯黑色
+.cell {
+  color: #000;
+}

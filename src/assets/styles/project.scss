@@ -1,0 +1,368 @@
+@import "./variables.scss";
+$gradient: linear-gradient(0deg, #105d87, #34b4dc);
+$delBtnColor: linear-gradient(0deg, #ff6666 0%, #ff6666 100%);
+$importBtncolor: linear-gradient(180deg, #fbd502 0%, #f5ac01 100%);
+
+#app {
+  color: #fff;
+  font-size: 12px;
+
+  // tabs 样式
+  .el-tabs--card {
+    background: $bg-color;
+
+    .el-tabs__header {
+      background: #1b202b;
+      border: none;
+      margin-bottom: 0;
+
+      .el-tabs__nav {
+        border: none;
+      }
+
+      .el-tabs__nav-wrap {
+        margin-bottom: 0;
+      }
+    }
+
+    .el-tabs__item {
+      background: #15304f;
+      color: #fff;
+      border: none;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .el-tabs__item.is-active {
+      color: #15304f;
+      background: $bg-white;
+    }
+  }
+
+  // newTab样式
+  .newTab {
+    .el-tabs--card {
+      background: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      color: #313131;
+    }
+
+    .el-tabs--card .el-tabs__header {
+      background: RGBA(243, 245, 248, 1) !important;
+    }
+
+    .el-tabs--card .el-tabs__item {
+      background: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      color: #313131;
+    }
+
+    .el-tabs__item.is-active {
+      color: #fff;
+      background: #0F84BB;
+    }
+  }
+
+  // card 样式
+  .el-card {
+    background: $bg-white;
+    margin-bottom: 15px;
+    border-radius: 0px;
+
+    .el-card__header {
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+
+      .fr {
+        background: $gradient;
+      }
+    }
+
+    .el-card__body {
+      padding: 15px;
+    }
+
+    //表格样式
+    .el-table {
+
+      // background-color: $bg-white;
+      th {
+        background: $bg-white;
+      }
+
+      .el-table__row--striped {
+
+        tr,
+        td {
+          // background: $bg-white;
+        }
+      }
+
+      //  表格按钮样式
+      .el-button--primary {
+        padding: 4px 7px;
+        font-size: 9px;
+        color: #fefefe;
+        background: $gradient;
+        border: 1px solid #46c4ec;
+        border-radius: 4px;
+      }
+
+      .el-button--info.is-plain.is-disabled {
+        padding: 4px 7px;
+        font-size: 9px;
+      }
+
+      .el-button--danger {
+        padding: 4px 7px;
+        font-size: 9px;
+        color: #fefefe;
+        background: $delBtnColor;
+        border: 1px solid #f25757;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  // 表单样式
+  .el-form {
+    background: $bg-white;
+
+    .el-radio-button .el-radio-button__inner {
+      padding: 11px 16px;
+      font-size: 13px;
+    }
+
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+      background: #2ea5ce;
+      border-color: #2ea5ce;
+      box-shadow: none;
+    }
+
+    .el-input__inner {
+      height: 35px;
+    }
+
+    .el-form-item__label {
+      line-height: 37px;
+    }
+
+    .el-button {
+      padding: 11px 18px;
+      font-size: 14px;
+      background: $gradient;
+      border: none;
+    }
+
+    .el-button--warning {
+      padding: 11px 18px;
+      font-size: 14px;
+      background: $importBtncolor;
+      border: none;
+    }
+
+    // 自定义图标
+    .el-icon-export {
+      background: url(/src/assets/images/wrtz/3.png) center no-repeat;
+      background-size: cover;
+      font-size: 16px;
+    }
+
+    .el-icon-export::before {
+      content: "替";
+      font-size: 16px;
+    }
+  }
+
+  // 分页样式
+  .pagination {
+    padding-top: 10px;
+    text-align: right;
+
+    .el-pagination {
+
+      // margin-top: 10px;
+      // text-align: right;
+      // .el-pagination__total {
+      //   color: #ddd;
+      // }
+      .el-pager li,
+      .btn-prev,
+      .btn-next {
+        background: #fff;
+        border: 1px solid #ced0da;
+        color: #666;
+      }
+
+      .el-pager li:not(.disabled).active {
+        background: $gradient;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+
+  // 表格白底
+  .content-box {
+    background: #fff;
+    padding: 18px;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .content-box-low {
+    background: #fff;
+    padding: 18px;
+    overflow: auto;
+  }
+}
+
+// 菜单
+$bc: #4de2e2;
+$bc2: #1ba2f1;
+
+.project-menu.el-menu {
+  border-right: none;
+  height: 100%;
+  box-shadow: inset 0px 0px 15px 0px $bc2;
+
+  .el-menu-item {
+    padding-left: 10px !important;
+
+    &:hover {
+      box-shadow: inset 0px 0px 10px 0px $bc;
+      background: transparent !important;
+    }
+
+    &:focus {
+      background: transparent !important;
+    }
+  }
+
+  .el-submenu__title {
+    padding-left: 10px !important;
+
+    &:hover {
+      background: transparent !important;
+    }
+  }
+
+  .el-submenu {
+    .el-menu-item {
+      padding-left: 30px !important;
+    }
+  }
+
+  .el-menu-item.is-active {
+    border: 1px solid $bc;
+    color: #fff;
+    box-shadow: inset 0px 0px 10px 0px $bc;
+
+    &::before {
+      content: " ";
+      width: 5px;
+      height: 100%;
+      background: $bc;
+      position: absolute;
+      left: -9px;
+      box-shadow: 0 0 10px 3px $bc;
+    }
+  }
+}
+
+.el-menu--vertical {
+  .el-menu--popup {
+    background-color: #112735 !important;
+    border-radius: 4px;
+  }
+
+  .el-menu-item {
+    height: 43px;
+    line-height: 43px;
+
+    &:hover {
+      color: #02deff !important;
+      background: transparent !important;
+    }
+
+    &:focus {
+      background: transparent !important;
+    }
+  }
+
+  .el-submenu__title {
+    &:hover {
+      color: #02deff !important;
+      background: transparent !important;
+    }
+  }
+}
+
+// 边框和阴影
+.border_shadow {
+  overflow: auto;
+  background: rgba(3, 26, 37, 0.75);
+  border: 1px solid #266b95;
+  box-shadow: inset 0 0 30px 0 #176e97;
+  padding: 15px 10px;
+}
+
+body {
+
+  // 一站一图 popover 弹窗样式
+  .yzyt_popover {
+    color: #fff;
+    background: rgba(3, 26, 37, 0.75);
+    border: 1px solid #266b95;
+    box-shadow: inset 0 0 30px 0 #176e97;
+
+    .war_content {
+      max-height: calc(100vh - 300px);
+      overflow: auto;
+
+      div {
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+
+        h6 {
+          font-size: 14px;
+          padding-left: 8px;
+          position: relative;
+
+          &::before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 2px;
+            height: 12px;
+            background: #439dc8;
+          }
+        }
+      }
+
+      .link {
+        color: #1989fa;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.site_popover {
+  padding: 0 !important;
+}
+
+// 弹框关闭按钮 X
+::v-deep .el-dialog__header {
+  .el-dialog__headerbtn .el-dialog__close {
+    color: #fff !important;
+  }
+}
